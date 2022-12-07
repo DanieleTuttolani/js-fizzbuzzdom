@@ -9,18 +9,24 @@
 const target = document.getElementById("altCol");
 //! punto 2 **************************************
 for( let i = 1; i <=100; i++){
-    //! creo elementi moduli
-    const fizOption = i % 3;
-    const buzOption = i % 5;
     //! creo i testi per i target
     const fizElement = "fizz";
     const buzElement = "buzz";
+    const fizbuz = "Fizz Buzz";
 
-    if( fizOption <= 0){
-        i = fizElement;
+   /*3 sostituisco i multipli di 3 con fizz
+    4- sostituisco i multipli di 5 con buzz
+    5- sostituisco i multipli di 3 e 5 con fizzbuzz
+    */
+    if( i % 3 === 0 && i % 5 === 0){
+        console.log(fizbuz)
         
-    }else if (buzOption <=0){
-        i = buzElement;
+    }else if ( i % 5 === 0){
+        console.log(buzElement)
+    }else if(i % 3 === 0){
+        console.log(fizElement);
     }
-    console.log(i);
+    else{
+        console.log(i);
+    }
 }
