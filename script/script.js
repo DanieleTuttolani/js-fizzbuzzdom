@@ -6,10 +6,20 @@
 6-prendo i dati e stampo nel documento*/
 
 //! punto 1************************************
-const target = document.getElementById("altCol");
+const rowTarget = document.getElementById("row-target");
 //! punto 2 **************************************
+
+
+
 for( let i = 1; i <=100; i++){
+    let cols= document.createElement("div")
+    cols.className = "col-2";
+    cols.classList.add ("border" ,"border-primary" ,"altCol");
+    
+    
     //! creo i testi per i target
+   
+   
     const fizElement = "fizz";
     const buzElement = "buzz";
     const fizbuz = "Fizz Buzz";
@@ -18,15 +28,27 @@ for( let i = 1; i <=100; i++){
     4- sostituisco i multipli di 5 con buzz
     5- sostituisco i multipli di 3 e 5 con fizzbuzz
     */
+   
+   
+   
     if( i % 3 === 0 && i % 5 === 0){
-        console.log(fizbuz)
-        
+       const colWrapper = document.createElement("p")
+       colWrapper.append(fizbuz);
+       cols.appendChild(colWrapper)
     }else if ( i % 5 === 0){
-        console.log(buzElement)
+        const colWrapper = document.createElement("p")
+        colWrapper.append(buzElement);
+        cols.appendChild(colWrapper)
     }else if(i % 3 === 0){
-        console.log(fizElement);
+        const colWrapper = document.createElement("p")
+       colWrapper.append(fizElement);
+       cols.appendChild(colWrapper)
     }
     else{
-        console.log(i);
+        const colWrapper = document.createElement("p")
+        colWrapper.append(i);
+        cols.appendChild(colWrapper)    
     }
+    rowTarget.appendChild(cols);
+    console.log(cols)
 }
