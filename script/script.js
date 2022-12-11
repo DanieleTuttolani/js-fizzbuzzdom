@@ -14,7 +14,7 @@ const rowTarget = document.getElementById("row-target");
 for( let i = 1; i <=100; i++){
     let cols= document.createElement("div")
     cols.className = "col-2";
-    cols.classList.add ("border" ,"border-primary" ,"altCol");
+    cols.classList.add ("border" ,"altCol", "rounded-3", "text-center","py-4");
     
     
     //! creo i testi per i target
@@ -35,19 +35,26 @@ for( let i = 1; i <=100; i++){
        const colWrapper = document.createElement("p")
        colWrapper.append(fizbuz);
        cols.appendChild(colWrapper)
+       cols.classList.add("bg-dark", "text-light")
     }else if ( i % 5 === 0){
         const colWrapper = document.createElement("p")
         colWrapper.append(buzElement);
-        cols.appendChild(colWrapper)
+        cols.appendChild(colWrapper);
+        cols.classList.add("bg-dark", "text-light")
+
     }else if(i % 3 === 0){
         const colWrapper = document.createElement("p")
        colWrapper.append(fizElement);
        cols.appendChild(colWrapper)
+       cols.classList.add("bg-success", "text-light")
+
     }
     else{
         const colWrapper = document.createElement("p")
         colWrapper.append(i);
-        cols.appendChild(colWrapper)    
+        cols.appendChild(colWrapper)  
+        cols.classList.add("bg-danger", "text-light")
+  
     }
     rowTarget.appendChild(cols);
     console.log(cols)
